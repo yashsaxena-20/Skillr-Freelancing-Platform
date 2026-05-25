@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skillr Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Skillr Freelancing Dashboard</h1>
+
+<!-- JOBS SECTION -->
+<div class="card">
+<h2>Jobs</h2>
+<button onclick="loadJobs()">Load Jobs</button>
+
+<table id="jobsTable">
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Price</th>
+<th>Status</th>
+</tr>
+</table>
+</div>
+
+<!-- BID SECTION -->
+<div class="card">
+<h2>Place Bid</h2>
+
+<input id="job_id" placeholder="Job ID">
+<input id="freelancer_id" placeholder="Freelancer ID">
+<input id="price" placeholder="Bid Price">
+
+<button onclick="placeBid()">Submit Bid</button>
+</div>
+
+<!-- CONTRACT SECTION -->
+<div class="card">
+<h2>Create Contract</h2>
+
+<input id="c_job" placeholder="Job ID">
+<input id="c_freelancer" placeholder="Freelancer ID">
+<input id="c_date" placeholder="Start Date (YYYY-MM-DD)">
+<input id="c_price" placeholder="Final Price">
+
+<button onclick="createContract()">Create</button>
+</div>
+
+<!-- PAYMENT -->
+<div class="card">
+<h2>Payments</h2>
+
+<input id="contract_id" placeholder="Contract ID">
+<input id="amount" placeholder="Amount">
+<input id="ptype" placeholder="advance / final">
+<input id="pstatus" placeholder="success / pending">
+
+<button onclick="makePayment()">Pay</button>
+</div>
+
+<!-- REVIEW -->
+<div class="card">
+<h2>Submit Review</h2>
+
+<input id="r_contract" placeholder="Contract ID">
+<input id="reviewer" placeholder="Reviewer ID">
+<input id="reviewee" placeholder="Reviewee ID">
+<input id="rating" placeholder="Rating">
+<input id="comment" placeholder="Comment">
+
+<button onclick="submitReview()">Submit</button>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Transaction Testing (Task-6)</h2>
+
+<h3>Write-Write Conflict</h3>
+<input id="conflict_job" placeholder="Job ID">
+<input id="conflict_delay" placeholder="Delay (sec)">
+<button onclick="txConflict()">Run Conflict</button>
+
+<h3>Deadlock</h3>
+<input id="d_job1" placeholder="Job1">
+<input id="d_job2" placeholder="Job2">
+<input id="d_delay" placeholder="Delay">
+<button onclick="txDeadlock()">Run Deadlock</button>
+
+<h3>Dirty Read</h3>
+<input id="dirty_job" placeholder="Job ID">
+<button onclick="txDirtyWrite()">Start Dirty Write</button>
+<button onclick="txDirty()">Run Dirty Read</button>
+
+<p id="tx_output"></p>
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
